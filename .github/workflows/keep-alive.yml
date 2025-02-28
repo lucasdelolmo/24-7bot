@@ -1,0 +1,13 @@
+name: Keep Alive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *"  # Se ejecuta cada 10 minutos
+
+jobs:
+  keep-alive:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Hacer una solicitud para evitar inactividad
+        run: curl -s "https://tu-aplicacion.com"
